@@ -143,7 +143,8 @@ if (!document.createElement('canvas').getContext) {
         }, false);
         // 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
         // 因此我们通过一个用户交互事件来主动 play 一下 audio.
-        window.addEventListener('touchstart', forceSafariPlayAudio, false);
+        //window.addEventListener('touchstart', forceSafariPlayAudio, false);
+				forceSafariPlayAudio();
         audioEl.src = 'Let-us-marry.mp3';
     })();
 
