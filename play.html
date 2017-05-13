@@ -64,7 +64,7 @@
         // 因此我们通过一个用户交互事件来主动 play 一下 audio.
         window.addEventListener('touchstart', forceSafariPlayAudio, false);
        
-        var bot = document.getElementById('bgmusic');
+        var bot = document.getElementsByTagName("body")[0] 
         bot.addEventListener('touchstart', function () {
             alert('touchstart');
             forceSafariPlayAudio();
@@ -80,6 +80,11 @@
 
         audioEl.src = 'http://www.w3school.com.cn/i/song.mp3';
     })();
+
+
+    window.onload=function(){
+    document.getElementById("bg").style.backgroundColor="#F90";
+    }
     </script>
 
 </body></html>
