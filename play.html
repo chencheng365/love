@@ -64,10 +64,20 @@
         // 因此我们通过一个用户交互事件来主动 play 一下 audio.
         window.addEventListener('touchstart', forceSafariPlayAudio, false);
        
-        var bot = document.getElementsByTagName("body")[0] 
+        
+
+        audioEl.src = 'http://www.w3school.com.cn/i/song.mp3';
+    })();
+
+
+    window.onload=function(){
+     
+        var bot = document.getElementsByTagName("body")[0]; 
+       
         bot.addEventListener('touchstart', function () {
-            //alert('touchstart');
-            forceSafariPlayAudio();
+            var audioEl = document.getElementById('bgmusic');
+            audioEl.load(); // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
+            audioEl.play(); // iOS 7/8 仅需要 play 一下
         });
         
         creatTouchstartEventAndDispatch(bot);
@@ -77,13 +87,6 @@
             event.initEvent('touchstart', true, true);
             el.dispatchEvent(event);
         }
-
-        audioEl.src = 'http://www.w3school.com.cn/i/song.mp3';
-    })();
-
-
-    window.onload=function(){
-     alert("Do you like me ?")
     }
     </script>
 
