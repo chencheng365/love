@@ -56,7 +56,7 @@
 	</div>
 </div>
 
-<div style="width:1111px;margin:50px auto 0 auto;height: 50px;">
+<div style="width:1111px;margin:50px auto 0 auto;height: 50px;padding-top: 20px;">
 	<audio id="bgmusic" autoplay preload loop controls></audio>
 	<!--<audio controls="controls" autoplay="autoplay" id="bgmusic">
 		<source src="http://www.w3school.com.cn/i/song.ogg" type="audio/ogg">
@@ -144,18 +144,6 @@ if (!document.createElement('canvas').getContext) {
         // 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
         // 因此我们通过一个用户交互事件来主动 play 一下 audio.
         window.addEventListener('touchstart', forceSafariPlayAudio, false);
-					var bot = document.getElementById('bgmusic');
-					bot.addEventListener('touchstart', function () {
-						forceSafariPlayAudio();
-					});
-					
-					creatTouchstartEventAndDispatch(bot);
-					
-					function creatTouchstartEventAndDispatch (el) {
-						var event = document.createEvent('Events');
-						event.initEvent('touchstart', true, true);
-						el.dispatchEvent(event);
-					}
         audioEl.src = 'Let-us-marry.mp3';
     })();
 
